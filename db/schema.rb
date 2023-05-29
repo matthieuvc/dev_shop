@@ -10,8 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_29_124114) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "webdevs", force: :cascade do |t|
+    t.string "service_type"
+    t.integer "price"
+    t.integer "experience_year"
+    t.string "availablity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
