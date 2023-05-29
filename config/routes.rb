@@ -5,4 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "webdevs", to: "webdevs#index"
+  get "webdevs/new", to: "webdevs#new"
+  post "webdevs", to: "webdevs#create"
 end
