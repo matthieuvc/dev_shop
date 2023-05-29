@@ -8,6 +8,7 @@
 
 puts "Cleaning database..."
 User.destroy_all
+Webdev.destroy_all
 
 puts "Creating users..."
 User.create(email: "vancauwenbergh.matthieu@gmail.com", password: "Azertyuiop", name: "Mathieu")
@@ -22,3 +23,16 @@ User.create(email: "djoulde.test@gmail.com", password: "Azertyuiop", name: "Juni
 User.create(email: "pedro.testt@gmail.com", password: "Azertyuiop", name: "Pedro Pan")
 User.create(email: "cassandra.testt@gmail.com", password: "Azertyuiop", name: "Cassandra")
 User.create(email: "olivier.testt@gmail.com", password: "Azertyuiop", name: "Olivier")
+
+
+puts "Creating webdev..."
+Webdev.create(service_type: "Website Development", price: 180, experience_year: 5, user_id: 1)
+Webdev.create(service_type: "E-commerce Development", price: 150, experience_year: 3, user_id: 1)
+Webdev.create(service_type: "Mobile App Development", price: 250, experience_year: 7, user_id: 3)
+Webdev.create(service_type: "UI/UX Design", price: 800, experience_year: 2, user_id: 4)
+Webdev.create(service_type: "Front-end Development", price: 200, experience_year: 4, user_id: 5)
+Webdev.create(service_type: "Back-end Development", price: 300, experience_year: 6, user_id: 6)
+Webdev.create(service_type: "WordPress Development", price: 350, experience_year: 3, user_id: 7)
+Webdev.create(service_type: "Custom Web Application Development", price: 2, experience_year: 8, user_id: 8)
+Webdev.create(service_type: "Graphic Design", price: 400, experience_year: 8, user_id: 9)
+Webdev.create(service_type: "SEO Optimization", price: 550, experience_year: 1, user_id: 10)
