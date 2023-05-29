@@ -34,9 +34,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_29_140516) do
     t.string "availability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "users_id"
-    t.index ["users_id"], name: "index_webdevs_on_users_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_webdevs_on_user_id"
   end
 
-  add_foreign_key "webdevs", "users", column: "users_id"
+  add_foreign_key "webdevs", "users"
 end
