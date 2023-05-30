@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   get "webdevs", to: "webdevs#index"
   get "webdevs/new", to: "webdevs#new"
   post "webdevs", to: "webdevs#create"
+  get "webdevs/:id", to: "webdevs#show", as: :webdev
+  get "webdevs/:id/edit", to: "webdevs#edit", as: :webdevedit
+  patch "webdevs/:id", to: "webdevs#update"
+
+
 end
