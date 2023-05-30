@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get "webdevs/:id", to: "webdevs#show", as: :webdev
   get "webdevs/:id/edit", to: "webdevs#edit", as: :webdevedit
   patch "webdevs/:id", to: "webdevs#update"
-
+  
+  resources :webdevs do
+    resources :reservations, only: [:new, :create, :show]
+  end
 
 end
