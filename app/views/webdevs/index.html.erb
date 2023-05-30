@@ -1,5 +1,10 @@
-  <ul>
-    <% @webdevs.each do |webdev| %>
-      <li><%= webdev.service_type %></li>
-    <% end %>
-  </ul>
+
+<div class="d-flex">
+  <div> <%# div with types of services %>
+    <ul>
+      <% @webdevs.each do |webdev| %>
+        <li><%= webdev.service_type %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
