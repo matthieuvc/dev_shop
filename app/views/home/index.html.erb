@@ -1,0 +1,14 @@
+<!-- home/index.html.erb -->
+<h1>Welcome to the <%= User::ROLES[current_user.role] %> Dashboard</h1>
+
+<% if current_user.role == User::ROLES[:webdev] %>
+  <!-- Afficher les projets de l'utilisateur webdev -->
+  <% @projects.each do |project| %>
+    <p><%= project.name %></p>
+  <% end %>
+<% else %>
+  <!-- Afficher les projets en vedette pour les utilisateurs standards -->
+  <% @featured_projects.each do |project| %>
+    <p><%= project.name %></p>
+  <% end %>
+<% end %>
