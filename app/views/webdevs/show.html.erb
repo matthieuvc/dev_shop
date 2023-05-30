@@ -1,7 +1,52 @@
-<h2><%= @webdev.service_type %></h2>
-<p><%= @webdev.price %></p>
-<p><%= @webdev.experience_year %></p>
-<p><%= @webdev.availability %></p>
+<h1 class="mt-3"><%= @webdev.service_type %></h1>
 
- <button type="button" class="btn btn-light"><%= link_to "Edit", webdevedit_path%></button>
- <button type="button" class="btn btn-light"><%= link_to "Back to overview", webdevs_path%></button>
+<div class="container d-flex m-4">
+  <div class="card m-2" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Description</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Services</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+
+  <div class="card m-2" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Price per hour</h5>
+      <h6 class="card-subtitle mb-2 text-muted">EUR <%= @webdev.price %></h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+
+  <div class="card m-2" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Years of experience</h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= @webdev.experience_year %> years(s)</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+
+  <div class="card m-2" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Availability</h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= @webdev.availability %></h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="buttons bottom ms-5">
+  <button type="button" class="btn btn-primary">Book</button>
+  <button type="button" class="btn btn-link"><%= link_to "Edit", webdevedit_path%></button>
+  <button type="button" class="btn btn-link"><%= link_to "Back to overview", webdevs_path%></button>
+<div>
