@@ -1,5 +1,13 @@
-  <ul>
+  <ul class="d-flex">
     <% @webdevs.each do |webdev| %>
-      <li><%= webdev.service_type %></li>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= webdev.service_type %></h5>
+          <p class="card-text">Price: EUR <%= webdev.price %> /hour</p>
+          <p class="card-text">Experience: <%= webdev.experience_year %> year(s)</p>
+          <a href="#" class="btn btn-primary">See details</a>
+        </div>
+      </div>
     <% end %>
   </ul>
