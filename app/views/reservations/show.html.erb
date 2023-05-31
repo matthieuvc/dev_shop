@@ -1,0 +1,15 @@
+<h1>Reservation Details</h1>
+
+<p><strong>Start Date:</strong> <%= @reservation.start_date %></p>
+<p><strong>End Date:</strong> <%= @reservation.end_date %></p>
+<p><strong>Duration:</strong> <%= @rduration_in_hours %> hours</p>
+<p><strong>Price:</strong> <%= number_to_currency(@reservation.price) %></p>
+<p><strong>Status:</strong> <%= @reservation.status %></p>
+
+<% if @reservation.status == 'pending' %>
+  <p>Your reservation is currently pending.</p>
+<% elsif @reservation.status == 'approved' %>
+  <p>Your reservation has been approved.</p>
+<% elsif @reservation.status == 'rejected' %>
+  <p>Your reservation has been rejected.</p>
+<% end %>
