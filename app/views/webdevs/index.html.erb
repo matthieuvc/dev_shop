@@ -1,4 +1,18 @@
 
+
+<div class="d-flex">
+  <div> <%# div with types of services %>
+    <ul>
+    <% @webdevs.each do |webdev| %>
+    <li><%= webdev.service_type %></li>
+    <% if webdev.photo.present? %>
+      <%= cl_image_tag webdev.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <p>No photo available</p>
+    <% end %>
+  <% end %>
+</ul>
+
 <div class="container d-flex mt-4">
 
   <div class="filter">
@@ -137,6 +151,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
