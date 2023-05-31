@@ -2,9 +2,14 @@
 <div class="d-flex">
   <div> <%# div with types of services %>
     <ul>
-      <% @webdevs.each do |webdev| %>
-        <li><%= webdev.service_type %></li>
-      <% end %>
-    </ul>
+    <% @webdevs.each do |webdev| %>
+    <li><%= webdev.service_type %></li>
+    <% if webdev.photo.present? %>
+      <%= cl_image_tag webdev.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <p>No photo available</p>
+    <% end %>
+  <% end %>
+</ul>
   </div>
 </div>
