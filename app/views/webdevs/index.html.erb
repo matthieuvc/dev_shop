@@ -1,3 +1,145 @@
+
+<div class="container d-flex mt-4">
+
+  <div class="filter">
+    <h3>What kind of service are you looking for?</h3>
+      <ul>
+        <% @webdevs.each do |webdev| %>
+          <li><%= webdev.service_type %></li>
+        <% end %>
+      </ul>
+  </div>
+
+
+
+  <div class="container mt-4 d-flex mb-4">
+
+    <div class="column">
+
+      <input type="text" class="mb-4 search_bar" placeholder="🔎 Search...">
+
+      <div class="webdevs-main">
+        <div class="row">
+          <div class="col-sm-7 col-md-8">
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-5 col-md-3 text-center">
+                <img src="https://i.pinimg.com/564x/fa/0c/d8/fa0cd84c66e4ce7321a8adaad3cfd0e1.jpg" class="avatar-bordered-card"  alt="">
+              </div>
+
+              <div class="col-xs-12 col-sm-7 col-md-9 text-center-xs">
+                <h3><b>WebDev Name</b></h3>
+                <h5>Main skill</h5>
+                <p>Rating</p>
+              </div>
+            </div>
+
+            <div class="mt-1">
+              <p>Short resume of the habilities or presentation of the Web Developer!</p>
+            </div>
+          </div>
+
+          <div class="col-sm-5 col-md-4 col-xs-12 text-end">
+            <a type="button" class="btn btn-primary rounded-5 mt-2">Hire me</a>
+
+            <div class="text-center-sm">
+              <p class="h5 text-center-sm mt-3"><span class="small">Hourly rate:</span></p>
+              <p class="h5 text-center-sm"><span class="price">EUR 10.00</span></p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 text-center-xs">
+            <ul class="list-inline skills">
+              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">UI/UX Design (2 to 3 years)</a>
+              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">WordPress (3 to 5 years)</a>
+              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">Graphic Design (4 years)</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="webdevs-main">
+        <div class="row">
+          <div class="col-sm-7 col-md-8">
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-5 col-md-3 text-center">
+                <img src="https://i.pinimg.com/564x/d5/53/bd/d553bdcedfe82d28ed501bb6150cb079.jpg" class="avatar-bordered-card"  alt="">
+              </div>
+
+              <div class="col-xs-12 col-sm-7 col-md-9 text-center-xs">
+                <h3><b>WebDev Name</b></h3>
+                <h5>Main skill</h5>
+                <p>Rating</p>
+              </div>
+            </div>
+
+            <div class="mt-1">
+              <p>Short resume of the habilities or presentation of the Web Developer!</p>
+            </div>
+          </div>
+
+          <div class="col-sm-5 col-md-4 col-xs-12 text-end">
+            <a type="button" class="btn btn-primary rounded-5 mt-2">Hire me</a>
+
+            <div class="text-center-sm">
+              <p class="h5 text-center-sm mt-3"><span class="small">Hourly rate:</span></p>
+              <p class="h5 text-center-sm"><span class="price">EUR 10.00</span></p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 text-center-xs">
+            <ul class="list-inline skills">
+              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">Website Development (2 to 3 years)</a>
+              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">E-commerce Development (3 to 5 years)</a>
+              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">Mobile App Development (4 years)</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="webdevs-main">
+        <div class="row">
+          <div class="col-sm-7 col-md-8">
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-5 col-md-3 text-center">
+                <img src="https://i.pinimg.com/564x/16/8c/bc/168cbca77d6f703f37534b9c41176d09.jpg" class="avatar-bordered-card"  alt="">
+              </div>
+
+              <div class="col-xs-12 col-sm-7 col-md-9 text-center-xs">
+                <h3><b>WebDev Name</b></h3>
+                <h5>Main skill</h5>
+                <p>Rating</p>
+              </div>
+            </div>
+
+            <div class="mt-1">
+              <p>Short resume of the habilities or presentation of the Web Developer!</p>
+            </div>
+          </div>
+
+          <div class="col-sm-5 col-md-4 col-xs-12 text-end">
+            <a type="button" class="btn btn-primary rounded-5 mt-2">Hire me</a>
+
+            <div class="text-center-sm">
+              <p class="h5 text-center-sm mt-3"><span class="small">Hourly rate:</span></p>
+              <p class="h5 text-center-sm"><span class="price">EUR 10.00</span></p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 text-center-xs">
+            <ul class="list-inline skills">
+              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">WordPress Development (2 to 3 years)</a>
+              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">Custom Web Application Development (3 to 5 years)</a>
+              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">Back-end Development (4 years)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   <ul class="d-flex">
     <% @webdevs.each do |webdev| %>
       <div class="card" style="width: 18rem;">
