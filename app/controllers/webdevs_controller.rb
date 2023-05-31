@@ -7,14 +7,29 @@ class WebdevsController < ApplicationController
     @webdev = Webdev.new
   end
 
+  def show
+    @webdev = Webdev.find(params[:id])
+  end
+
   def create
     @webdev = Webdev.new(webdev_params)
     @webdev.save
   end
 
+  def edit
+    @webdev = Webdev.find(params[:id])
+  end
+
+  def update
+    @webdev = Webdev.find(params[:id])
+    @webdev.update(webdev_params)
+    redirect_to webdev_path(@webdev)
+  end
+
   private
 
   def webdev_params
+
     params.require(:webdev).permit(:service_type, :price, :experience_year, :availablity, :photo)
   end
 end
