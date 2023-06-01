@@ -29,6 +29,8 @@ class ReservationsController < ApplicationController
 
     def show
       @reservation= Reservation.find(params[:id])
+      @duration_in_hours =  (@reservation[:end_date] - @reservation[:start_date]).to_i / 1.hour
+
     end
 
 
