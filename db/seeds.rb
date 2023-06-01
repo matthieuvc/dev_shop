@@ -1,6 +1,7 @@
 require 'faker'
 
 puts "Cleaning webdevs database..."
+Reservation.destroy_all
 Webdev.destroy_all
 
 puts "Cleaning users database..."
