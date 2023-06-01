@@ -1,8 +1,23 @@
-<%= simple_form_for(@webdev) do |f| %>
-  <%= f.input :service_type %>
-  <%= f.input :price %>
-  <%= f.input :experience_year %>
-  <%= f.input :availability %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+
+  <div class="d-flex justify-content-center">
+
+    <div class="webdevs-main mt-4" style="width: 500px;">
+      <h1 class="mtb-2  text-center">New reservation</h1>
+
+      <div class="card_info">
+        <div>
+          <%= simple_form_for(@webdev) do |f| %>
+            <%= f.input :service_type %>
+            <%= f.input :price %>
+            <%= f.input :experience_year %>
+            <%= f.input :availability %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit %>
+          <% end %>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>

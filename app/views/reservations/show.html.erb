@@ -1,7 +1,7 @@
 <div class="container">
   <h2 class="mt-4">Reservation Details</h2>
 
-  <div class="webdevs-main d-flex">
+  <div class="webdevs-main d-flex justify-content-around">
 
     <div>
       <div class="d-flex">
@@ -57,27 +57,26 @@
 
     <div class="ms-5">
       <div class="d-flex">
-            <% if @reservation.status == 'pending' %>
-              <div>
-                <%# <i class="fa-solid fa-wand-magic-sparkles me-4"></i> %>
-                <p class="me-4">⏳</p>
-              </div>
-              <p>Your reservation is currently pending.</p>
-            <% elsif @reservation.status == 'approved' %>
-              <div>
-                <%# <i class="fa-solid fa-check me-4"></i> %>
-                <p class="me-4">✅</p>
-              </div>
-              <p>Your reservation has been approved.</p>
-            <% elsif @reservation.status == 'rejected' %>
-              <div>
-                <%# <i class="fa-solid fa-wand-magic-sparkles me-4"></i> %>
-                <p class="me-4">❌</p>
-              </div>
-              <p>Your reservation has been rejected.</p>
-            <% end %>
-      </div>
+        <% if @reservation.status == 'pending' %>
+          <div>
+            <p class="me-4">⏳ Your reservation is currently pending</p>
+            <img src="https://media.giphy.com/media/wbXkGmM7YMgpCggnPB/giphy.gif" alt="">
+          </div>
 
+        <% elsif @reservation.status == 'approved' %>
+          <div>
+            <p class="me-4">✅ Your reservation has been approved</p>
+            <img src="https://media.giphy.com/media/yoJC2GnSClbPOkV0eA/giphy.gif" alt="">
+          </div>
+
+        <% elsif @reservation.status == 'rejected' %>
+          <div>
+            <p class="me-4">❌ Your reservation has been rejected</p>
+            <img src="https://media.giphy.com/media/W0c3xcZ3F1d0EYYb0f/giphy.gif" alt="">
+          </div>
+        <% end %>
+      </div>
     </div>
+
   </div>
 </div>

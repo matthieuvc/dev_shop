@@ -1,12 +1,16 @@
-<h1>Reservations made</h1>
+<div class="container mt-4 mb-4">
 
-<div class="d-flex">
-  <% @reservations.each do |reservation|%>
-    <div class="card m-4" style="width: 20rem;">
-      <div class="card-body">
-        <h5 class="card-title"><%= reservation.webdev.service_type%></h5>
-        <a href="<%= webdev_reservation_path(reservation.webdev,reservation) %>" class="btn btn-primary rounded-5 mt-2">See details</a>
+  <h1>Reservations made</h1>
+
+  <div class="d-flex">
+    <% @reservations.each do |reservation|%>
+      <div class="webdevs-main m-4" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= reservation.webdev.service_type%></h5>
+          <a href="<%= webdev_reservation_path(reservation.webdev,reservation) %>" class="btn btn-outline-primary rounded-5 mt-2">See details</a>
+        </div>
       </div>
-    </div>
-  <%end%>
+    <%end%>
+  </div>
+  
 </div>
