@@ -1,6 +1,11 @@
 class WebdevsController < ApplicationController
   def index
     @webdevs = Webdev.all
+    if params[:query].present?
+      sql_subquery = "service_type ILIKE :query OR availability ILIKE :query"
+      @webdevs = @webdevs.where(sql_subquery, query: "%#{params[:query]}%")
+
+    end
   end
 
   def new

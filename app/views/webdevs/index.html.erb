@@ -3,9 +3,16 @@
   <div class="filter">
     <h3>What kind of service are you looking for?</h3>
       <ul>
-        <% @webdevs.each do |webdev| %>
-          <li><%= webdev.service_type %></li>
-        <% end %>
+        <li>Website Development</li>
+        <li>E-commerce Development</li>
+        <li>Mobile App Development</li>
+        <li>UI/UX Design</li>
+        <li>Front-end Development</li>
+        <li>Back-end Development</li>
+        <li>WordPress Development</li>
+        <li>Custom Web Application Development</li>
+        <li>Graphic Design</li>
+        <li>SEO Optimization</li>
       </ul>
   </div>
 
@@ -15,7 +22,19 @@
 
     <div class="column">
 
-      <input type="text" class="mb-4 search_bar" placeholder="🔎 Search...">
+     <div class="row justify-content-center">
+  <div class="col-sm-12 my-3">
+    <%= form_with url: webdevs_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search...🔍"
+        %>
+      <%= submit_tag "Go!", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
 
       <% @webdevs.each do |webdev| %>
         <div class="webdevs-main">
