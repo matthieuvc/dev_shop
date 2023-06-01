@@ -1,41 +1,65 @@
+<div class="container d-flex mt-4">
 
-    <% @webdevs.each do |webdev| %>
-      <div class="webdevs-main">
-        <div class="row">
-          <div class="col-sm-7 col-md-8">
+  <div class="filter">
+    <h3>What kind of service are you looking for?</h3>
+      <ul>
+        <% @webdevs.each do |webdev| %>
+          <li><%= webdev.service_type %></li>
+        <% end %>
+      </ul>
+  </div>
 
-            <div class="row">
-              <div class="col-xs-12 col-sm-5 col-md-3 text-center">
-                <img src="https://i.pinimg.com/564x/16/8c/bc/168cbca77d6f703f37534b9c41176d09.jpg" class="avatar-bordered-card"  alt="">
+
+
+  <div class="container mt-4 d-flex mb-4">
+
+    <div class="column">
+
+      <input type="text" class="mb-4 search_bar" placeholder="🔎 Search...">
+
+      <% @webdevs.each do |webdev| %>
+        <div class="webdevs-main">
+          <div class="row">
+            <div class="col-sm-7 col-md-8">
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-5 col-md-3 text-center">
+                  <%= cl_image_tag webdev.photo.key, height: 100, width: 100, crop: :fill, class:"avatar-bordered-card" %>
+                </div>
+
+                <div class="col-xs-12 col-sm-7 col-md-9 text-center-xs">
+                  <h3><b><%= webdev.user.name %></b></h3>
+                  <h5><%= webdev.service_type %></h5>
+                  <p>Experience: <%= webdev.experience_year %> year(s)</p>
+                  <p><%= webdev.availability %></p>
+                </div>
               </div>
 
-              <div class="col-xs-12 col-sm-7 col-md-9 text-center-xs">
-                <h3><b><%= webdev.service_type %></b></h3>
-                <h5>Experience: <%= webdev.experience_year %> year(s)</h5>
-                <p>Availability: <%= webdev.availability %></p>
+              <div class="mt-1">
+                <p>Short resume of the habilities or presentation of the Web Developer!</p>
               </div>
             </div>
 
-            <div class="mt-1">
-              <p>Short resume of the habilities or presentation of the Web Developer!</p>
+            <div class="col-sm-5 col-md-4 col-xs-12 text-end">
+              <a type="button" class="btn btn-primary rounded-5 mt-2">Hire me</a>
+
+              <div class="text-center-sm">
+                <p class="h5 text-center-sm mt-3"><span class="small">Hourly rate:</span></p>
+                <p class="h5 text-center-sm"><span class="price">EUR <%= webdev.price %></span></p>
+              </div>
             </div>
-          </div>
 
           <div class="col-sm-5 col-md-4 col-xs-12 text-end">
-            <button type="button" class="btn btn-light"><%= link_to "See details", webdev_path(webdev) %></button>
+            <a href="<%= new_webdev_reservation_path(webdev) %>" class="btn btn-primary rounded-5 mt-2">Hire me</a>
+
 
             <div class="text-center-sm">
               <p class="h5 text-center-sm mt-3"><span class="small">Hourly rate:</span></p>
-              <p class="h5 text-center-sm"><span class="price">EUR <%= webdev.price %></span></p>
+              <p class="h5 text-center-sm"><span class="price">EUR <%=webdev.price%></span></p>
             </div>
-          </div>
-
-          <div class="col-xs-12 text-center-xs">
-            <ul class="list-inline skills">
-              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">WordPress Development (2 to 3 years)</a>
-              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">Custom Web Application Development (3 to 5 years)</a>
-              <a type="button" class="btn btn-outline-primary btn-sm rounded-5 mt-2">Back-end Development (4 years)</a>
           </div>
         </div>
       </div>
-    <% end %>
+        <% end %>
+  </div>
+</div>

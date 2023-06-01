@@ -34,6 +34,6 @@ class WebdevsController < ApplicationController
   private
 
   def webdev_params
-    params.require(:webdev).permit(:service_type, :price, :experience_year, :availability)
+    params.require(:webdev).permit(:service_type, :price, :experience_year, :availablity, :photo)
   end
 end
