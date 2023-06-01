@@ -1,16 +1,83 @@
-<h1>Reservation Details</h1>
+<div class="container">
+  <h2 class="mt-4">Reservation Details</h2>
 
-<p><strong>Relevant webdev:</strong> <%= @reservation.webdev.service_type %></p>
-<p><strong>Start Date:</strong> <%= @reservation.start_date %></p>
-<p><strong>End Date:</strong> <%= @reservation.end_date %></p>
-<p><strong>Duration:</strong> <%= @rduration_in_hours %> hours</p>
-<p><strong>Price:</strong> <%= number_to_currency(@reservation.price) %></p>
-<p><strong>Status:</strong> <%= @reservation.status %></p>
+  <div class="webdevs-main d-flex">
+  
+    <div>
+      <div class="d-flex">
+          <div>
+            <i class="fa-solid fa-wand-magic-sparkles me-4"></i>
+          </div>
 
-<% if @reservation.status == 'pending' %>
-  <p>Your reservation is currently pending.</p>
-<% elsif @reservation.status == 'approved' %>
-  <p>Your reservation has been approved.</p>
-<% elsif @reservation.status == 'rejected' %>
-  <p>Your reservation has been rejected.</p>
-<% end %>
+          <div>
+            <h6><strong>Service Type:</strong></h6>
+            <p><%= @reservation.webdev.service_type %></p>
+          </div>
+      </div>
+
+      <div class="d-flex">
+          <div>
+            <i class="fa-solid fa-calendar me-4"></i>
+          </div>
+
+          <div>
+            <h6><strong>Start Date:</strong></h6>
+            <p><%= @reservation.start_date.strftime("%b %e, %l:%M %p") %></p>
+          </div>
+
+          <div class="special-gab">
+            <h6><strong>End Date:</strong></h6>
+            <p><%= @reservation.end_date.strftime("%b %e, %l:%M %p") %></p>
+          </div>
+
+      </div>
+
+      <div class="d-flex">
+          <div>
+            <i class="fa-regular fa-clock me-4"></i>
+          </div>
+
+          <div>
+            <h6><strong>Duration:</strong></h6>
+            <p><%= @duration_in_hours %> hour(s) of work</p>
+          </div>
+      </div>
+
+      <div class="d-flex">
+          <div>
+            <i class="fa-solid fa-coins me-4"></i>
+          </div>
+
+          <div>
+            <h6><strong>Price:</strong></h6>
+            <p><%= number_to_currency(@reservation.price) %></p>
+          </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="d-flex">
+            <% if @reservation.status == 'pending' %>
+              <div>
+                <%# <i class="fa-solid fa-wand-magic-sparkles me-4"></i> %>
+                <p class="me-4">⏳</p>
+              </div>
+              <p>Your reservation is currently pending.</p>
+            <% elsif @reservation.status == 'approved' %>
+              <div>
+                <%# <i class="fa-solid fa-check me-4"></i> %>
+                <p class="me-4">✅</p>
+              </div>
+              <p>Your reservation has been approved.</p>
+            <% elsif @reservation.status == 'rejected' %>
+              <div>
+                <%# <i class="fa-solid fa-wand-magic-sparkles me-4"></i> %>
+                <p class="me-4">❌</p>
+              </div>
+              <p>Your reservation has been rejected.</p>
+            <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

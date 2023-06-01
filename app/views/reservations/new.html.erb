@@ -1,7 +1,20 @@
+<div class="container">
 
-<h1>New reservation</h1>
-<%= simple_form_for [@webdev, @reservation] do |f| %>
-  <%= f.input :start_date, html5: true %>
-  <%= f.input :end_date, html5: true %>
-  <%= f.submit "Submit Reservation", class: "btn btn-primary" %>
-<% end %>
+  <div class="d-flex justify-content-center">
+
+    <div class="webdevs-main mt-4" style="width: 500px;">
+      <h2 class="mtb-2  text-center">New reservation</h2>
+
+      <div class="card_info">
+        <div>
+          <%= simple_form_for [@webdev, @reservation] do |f| %>
+            <%= f.input :start_date, html5: true %>
+            <%= f.input :end_date, html5: true %>
+            <%= f.submit "Submit Reservation", class: "btn btn-primary new_btn_large" %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
