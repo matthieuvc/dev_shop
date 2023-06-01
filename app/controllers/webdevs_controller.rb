@@ -13,7 +13,12 @@ class WebdevsController < ApplicationController
 
   def create
     @webdev = Webdev.new(webdev_params)
-    @webdev.save
+    @webdev.user = current_user
+    if @webdev.save
+      redirect_to webdev_path(@webdev)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
