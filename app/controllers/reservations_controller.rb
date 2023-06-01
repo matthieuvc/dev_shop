@@ -33,7 +33,17 @@ class ReservationsController < ApplicationController
 
     end
 
-
+    def approve
+      @reservation = Reservation.find_by_id(params[:id])
+      @reservation.update(status: "approved")
+       if @reservation.state == "approved"
+         flash[:success] = "Booking successfully approved"
+         redirect_to @reservations_path
+       else
+         flash[:error] = "Booking not approved"
+         redirect_to @reservations_path
+       end
+      end 
   private
 
   def reservation_params
