@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
     start_time = @reservation.start_date
     end_time = @reservation.end_date
 
-    @duration_in_hours =  (@reservation[:end_date] - @reservation[:start_date]).to_i / 1.hour
+    @duration_in_hours = (@reservation[:end_date] - @reservation[:start_date]).to_i / 1.hour
 
     @reservation.price = @webdev.price * @duration_in_hours
     @reservation.status = 'pending'
@@ -27,12 +27,10 @@ class ReservationsController < ApplicationController
     end
   end
 
-    def show
-      @reservation= Reservation.find(params[:id])
-      @duration_in_hours =  (@reservation[:end_date] - @reservation[:start_date]).to_i / 1.hour
-
-    end
-
+  def show
+    @reservation = Reservation.find(params[:id])
+    @duration_in_hours = (@reservation[:end_date] - @reservation[:start_date]).to_i / 1.hour
+  end
 
   private
 
