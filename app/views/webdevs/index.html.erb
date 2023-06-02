@@ -3,16 +3,16 @@
   <div class="filter sticky-gab">
     <h3>What kind of service are you looking for?</h3>
       <ul>
-        <li>Website Development</li>
-        <li>E-commerce Development</li>
-        <li>Mobile App Development</li>
-        <li>UI/UX Design</li>
-        <li>Front-end Development</li>
-        <li>Back-end Development</li>
-        <li>WordPress Development</li>
-        <li>Custom Web Application Development</li>
-        <li>Graphic Design</li>
-        <li>SEO Optimization</li>
+        <li><%= link_to "Website Development", webdevs_path(query:"Website Development") %></li>
+        <li><%= link_to "E-commerce Development", webdevs_path(query:"E-commerce Development") %></li>
+        <li><%= link_to "Mobile App Development", webdevs_path(query:"Mobile App Development") %></li>
+        <li><%= link_to "UI/UX Design", webdevs_path(query:"UI/UX Design") %></li>
+        <li><%= link_to "Front-end Development", webdevs_path(query:"Front-end Development") %></li>
+        <li><%= link_to "Back-end Development", webdevs_path(query:"Back-end Development") %></li>
+        <li><%= link_to "WordPress Development", webdevs_path(query:"WordPress Development") %></li>
+        <li><%= link_to "Custom Web Application Development", webdevs_path(query:"Custom Web Application Development") %></li>
+        <li><%= link_to "Graphic Design", webdevs_path(query:"Graphic Design") %></li>
+        <li><%= link_to "SEO Optimization", webdevs_path(query:"SEO Optimization") %></li>
       </ul>
   </div>
 
@@ -61,8 +61,7 @@
 
             <div class="col-sm-5 col-md-4 col-xs-12 text-end">
               <%= link_to "See details", webdev_path(webdev), class: "btn btn-outline-primary rounded-5 mt-2"%>
-              <%# link_to "Hire me", new_webdev_reservation_path(webdev), class: "btn btn-primary rounded-5 mt-2"%>
-              <button type="button" class="btn btn-primary rounded-5 mt-2" data-bs-toggle="popover" data-bs-placement="left" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Hire me!</button>
+              <%= link_to "Hire me", new_webdev_reservation_path(webdev), class: "btn btn-primary rounded-5 mt-2" %>
 
               <div class="text-center-sm">
                 <p class="h5 text-center-sm mt-3"><span class="small">Hourly rate:</span></p>
