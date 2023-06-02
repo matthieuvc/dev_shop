@@ -75,6 +75,10 @@
                 <div>
                   <h6><strong>Total price:</strong></h6>
                   <p><%= number_to_currency(reservation.price) %></p>
+                  <% if current_user == reservation.webdev.user && reservation.status == 'pending' %>
+                  <%= link_to 'Approve', approve_webdev_reservation_path(reservation.webdev,reservation ), class:"btn btn-primary rounded-5 mt-2", data: { "turbo-method": :patch }  %>
+                  <%= link_to 'Decline', decline_webdev_reservation_path(reservation.webdev,reservation ), class:"btn btn-danger rounded-5 mt-2", data: { "turbo-method": :patch }  %>
+                  <% end %>
                 </div>
             </div>
           </div>
