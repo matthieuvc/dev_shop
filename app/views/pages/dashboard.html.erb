@@ -10,22 +10,6 @@
       <div class="webdevs-main d-flex justify-content-around align-items-center mb-5">
         <div>
 
-          <div class="border-downline d-flex align-items-center mb-3">
-
-            <div class="mb-3">
-              <% if reservation.webdev.photo.attached?%>
-                <%=cl_image_tag reservation.webdev.photo.key, crop: :fill, class:"avatar-small-card" %>
-              <%else%>
-                <img src="https://img.freepik.com/photos-premium/portrait-drole-chien-fou-surpris_713888-1130.jpg?w=2000" alt="" class="avatar-bordered-card">
-              <% end %>
-            </div>
-
-            <div class="ms-3">
-              <h5><strong><%= reservation.webdev.user.name %></strong></h5>
-            </div>
-
-          </div>
-
           <div>
             <div class="d-flex">
                 <div>
