@@ -1,50 +1,48 @@
-<h1 class="mt-3"> Welcome to your Web dev Space, <%= @webdev.user.name %>!</h1>
+<div class="container mt-4 mb-4">
 
-<div class="container d-flex m-4">
-  <div class="card m-2" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Description</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Services</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <%= link_to "Edit", edit_webdev_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
+  <h1 class="text-center mt-5"> Welcome to your Web dev Space, <%= @webdev.user.name %>!</h1>
 
+  <div class="container d-flex mt-4">
+
+    <div class="webdevs-main m-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Description</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Services</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <%# link_to "Edit", edit_webdev_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
+      </div>
+    </div>
+
+    <div class="webdevs-main m-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Price per hour</h5>
+        <h6 class="card-subtitle mb-2 text-muted">EUR <%= @webdev.price %></h6>
+        <%# link_to "Edit", edit_webdev_path, class: "btn btn-outline-primary rounded-5 mt-5" %>
+      </div>
+    </div>
+
+
+    <div class="webdevs-main m-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Years of experience</h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= @webdev.experience_year %> years(s)</h6>
+        <%# link_to "Edit", edit_webdev_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
+
+      </div>
+    </div>
+
+    <div class="webdevs-main m-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Availability</h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= @webdev.availability %></h6>
+        <%# link_to "Edit", edit_webdev_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
+
+      </div>
     </div>
   </div>
 
-  <div class="card m-2" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Price per hour</h5>
-      <h6 class="card-subtitle mb-2 text-muted">EUR <%= @webdev.price %></h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <%= link_to "Edit", edit_webdev_path, class: "btn btn-outline-primary rounded-5 mt-5" %>
-
-    </div>
-  </div>
-
-
-  <div class="card m-2" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Years of experience</h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= @webdev.experience_year %> years(s)</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <%= link_to "Edit", edit_webdev_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
-
-    </div>
-  </div>
-
-  <div class="card m-2" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Availability</h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= @webdev.availability %></h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <%= link_to "Edit", edit_webdev_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
-
-    </div>
-  </div>
+  <div class="buttons bottom ms-5">
+    <%= link_to "Edit", edit_webdev_path(@webdev), class: "btn btn-outline-primary rounded-5 mt-5"%>
+    <%= link_to "Back to Overview", webdevs_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
+  <div>
 </div>
-
-<div class="buttons bottom ms-5">
-
-  <%= link_to "Edit", edit_webdev_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
-  <%= link_to "Back to Overview", webdevs_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
-<div>
