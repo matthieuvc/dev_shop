@@ -3,7 +3,7 @@
   <h1 class="text-center mt-5"> Welcome to your Web dev Space, <%= @webdev.user.name %>!</h1>
 
   <div class="container d-flex mt-4">
-  
+
     <div class="webdevs-main m-2" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">Description</h5>
@@ -42,7 +42,7 @@
   </div>
 
   <div class="buttons bottom ms-5">
-    <%= link_to "Edit", edit_webdev_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
+    <%= link_to "Edit", edit_webdev_path(@webdev), class: "btn btn-outline-primary rounded-5 mt-5"%>
     <%= link_to "Back to Overview", webdevs_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
   <div>
 </div>
