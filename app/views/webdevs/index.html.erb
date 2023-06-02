@@ -1,8 +1,12 @@
 <div class="container d-flex mt-4">
 
-  <div class="filter sticky-gab">
-    <h3>What kind of service are you looking for?</h3>
-      <ul>
+  <div class="filter sticky-gab" style="height: 70vh;">
+
+    <div class="d-flex align-items-center border-downline">
+    <i class="fa-solid fa-arrow-up-short-wide me-3"></i>
+    <h5 class="mb-0">Filter your results</h5>
+    </div>
+      <ul class="mt-2">
         <li>Website Development</li>
         <li>E-commerce Development</li>
         <li>Mobile App Development</li>
@@ -19,14 +23,14 @@
 
   <div class="container mt-4 d-flex mb-4">
 
-    <div class="column ">
+    <div class="column" style="width: 100%;">
       <div class="row justify-content-center">
       <div class="col-sm-12 my-3">
         <%= form_with url: webdevs_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
                 params[:query],
                 class: "form-control",
-                placeholder: "🔎 Search..."%>
+                placeholder: "🔎 Search here what are you looking for..."%>
           <%= submit_tag "Go!", name: "", class: "btn btn-primary" %>
         <% end %>
       </div>
@@ -62,7 +66,37 @@
             <div class="col-sm-5 col-md-4 col-xs-12 text-end">
               <%= link_to "See details", webdev_path(webdev), class: "btn btn-outline-primary rounded-5 mt-2"%>
               <%# link_to "Hire me", new_webdev_reservation_path(webdev), class: "btn btn-primary rounded-5 mt-2"%>
-              <button type="button" class="btn btn-primary rounded-5 mt-2" data-bs-toggle="popover" data-bs-placement="left" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Hire me!</button>
+              <button type="button" class="btn btn-primary rounded-5 mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Hire me!
+              </button>
+
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Choose the dates you need</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                      <div class="card_info">
+                        <div>
+                          <%= simple_form_for [webdev, @reservation] do |f| %>
+                            <%= f.input :start_date, html5: true %>
+                            <%= f.input :end_date, html5: true %>
+                            <%= f.submit "Submit Reservation", class: "btn btn-primary new_btn_large" %>
+                          <% end %>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div class="text-center-sm">
                 <p class="h5 text-center-sm mt-3"><span class="small">Hourly rate:</span></p>

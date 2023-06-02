@@ -27,16 +27,9 @@
   margin:10px;
 }
 
-// .gab-font-style h1, h2, h3, h4, h5{
-//   font-family: Rubik,Rubik-Medium;
-//   font-weight: 500;
-// }
-
-// .gab-font-style p{
-//   font-family: Poppins,Poppins-Regular;
-//   font-size: 18px;
-//   font-weight: 400;
-// }
+.title-style {
+  font-weight: 500;
+}
 
 .title-gradient {
   background: linear-gradient(90.04deg,#e76b83 .02%,#7484ed 55.64%);
@@ -55,12 +48,10 @@
 
 .card-gradient h3 {
   font-size: 28px;
-  // font-family: Rubik;
 }
 
 .card-gradient p {
   font-size: 16px;
-  // font-family: 'Popins';
 }
 
 .card-gradient-blue {
@@ -82,3 +73,20 @@
   border-radius: 10px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
+
+.avatar-small-card {
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: #d6d6d6 1px solid;
+  padding: 2px;
+}
+
+.border-downline{
+  border-bottom: 2px solid #0D6EFD;
+}
+
+.text-grey{
+  color: rgba(0,0,0,0.2);
+}
+

@@ -5,6 +5,7 @@ class WebdevsController < ApplicationController
       sql_subquery = "service_type ILIKE :query OR availability ILIKE :query"
       @webdevs = @webdevs.where(sql_subquery, query: "%#{params[:query]}%")
     end
+    @reservation = Reservation.new
   end
 
   def new
