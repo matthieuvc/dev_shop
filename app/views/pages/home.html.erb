@@ -2,39 +2,40 @@
 
   <div class="d-flex justify-content-around align-items-center mt-5">
     <div>
-      <h1 class="mb-5">Welcome to DevShop</h1>
-      <h4 class="mb-5">We've got highly skilled candidates ready-to-go.</h4>
+      <h1 class="title-gradient mb-5">Welcome to DevShop</h1>
+      <h4 class="mb-3">We've got highly skilled candidates ready-to-go.</h4>
 
       <%= link_to "Apply as a Webdev", new_webdev_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
-      <%= link_to "Rent a WebDev", webdevs_path, class: "btn btn-outline-primary rounded-5 mt-5"%>
+      <%= link_to "Rent a WebDev", webdevs_path, class: "btn btn-primary rounded-5 mt-5"%>
     </div>
 
-    <img src="https://images.unsplash.com/photo-1580894908361-967195033215?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="rounded float-end ms-2" alt="coding" width=600>
+    <img src="https://images.unsplash.com/photo-1580894908361-967195033215?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="bg-img-home float-end ms-2" alt="coding">
   </div>
 
   <h2 class="text-center mt-5">But, why rent with DevShop?</h2>
 
-  <div class="card-group space-around text-center mt-5">
+  <div class="d-flex justify-content-around align-items-center mt-3">
 
-    <div class="card" style="width: 18rem; margin:10px;">
+    <div class="card-gradient card-gradient-blue">
       <div class="card-body">
         <h3 class="card-title">Qualified Talent</h3>
         <p class="card-text">In the rapidly evolving world of technology, the demand for qualified talent with exceptional programming skills has reached unprecedented heights.</p>
       </div>
     </div>
 
-    <div class="card" style="width: 18rem; margin:10px;">
+    <div class="card-gradient card-gradient-orange">
       <div class="card-body">
         <h3 class="card-title">Variety of skills</h3>
         <p class="card-text">Proficiency in Programming Languages: Backend Development, Database Management, Version Control Systems, Responsive Web Design, and more...</p>
       </div>
     </div>
 
-    <div class="card" style="width: 18rem; margin:10px;">
+    <div class="card-gradient card-gradient-light-blue">
       <div class="card-body">
         <h3 class="card-title">Remote teams on demand</h3>
         <p class="card-text">Provides numerous benefits, effective communication, collaboration tools, and strong self-discipline are crucial for successful remote work arrangements.</p>
       </div>
     </div>
+
   </div>
 </div>

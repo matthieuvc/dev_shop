@@ -16,3 +16,69 @@
   position: sticky;
   height: 55vh;
 }
+
+.card-gradient {
+  border-radius: 32px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  width: 18rem;
+  height: 280px;
+  margin:10px;
+}
+
+// .gab-font-style h1, h2, h3, h4, h5{
+//   font-family: Rubik,Rubik-Medium;
+//   font-weight: 500;
+// }
+
+// .gab-font-style p{
+//   font-family: Poppins,Poppins-Regular;
+//   font-size: 18px;
+//   font-weight: 400;
+// }
+
+.title-gradient {
+  background: linear-gradient(90.04deg,#e76b83 .02%,#7484ed 55.64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  font-size: 64px;
+}
+
+.bg-img-home{
+  width: 600px;
+  border-radius: 32px;
+  content-visibility: visible;
+  background-size: cover;
+}
+
+.card-gradient h3 {
+  font-size: 28px;
+  // font-family: Rubik;
+}
+
+.card-gradient p {
+  font-size: 16px;
+  // font-family: 'Popins';
+}
+
+.card-gradient-blue {
+  background: linear-gradient(201.09deg,#2a83c4 12.99%,#9d32f0 66.43%,#8223c8 90.92%);
+}
+
+.card-gradient-orange {
+  background: linear-gradient(191.95deg,#d369bc 11.87%,#e78c7f 46.1%,#f8e398 93.35%);
+}
+
+.card-gradient-light-blue {
+  background: linear-gradient(90deg,#53b3be,#3650d3);
+}
+
+.gif-size {
+  width: 400px;
+  height: 250px;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
