@@ -21,7 +21,7 @@ class ReservationsController < ApplicationController
     @reservation.price = @webdev.price * @duration_in_hours
     @reservation.status = 'pending'
     if @reservation.save
-      redirect_to webdev_reservation_path(@webdev, @reservation), notice: 'Reservation created successfully.'
+      redirect_to dashboard_path, notice: 'Reservation created successfully.'
     else
       render :new, status: :unprocessable_entity
     end
