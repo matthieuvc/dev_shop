@@ -102,11 +102,11 @@
 
 
 
-              <% if webdev.user_id == current_user.id %>
+              <% if webdev.user == current_user %>
                 <%= link_to "Edit your details", edit_webdev_path(webdev), class: "btn btn-outline-primary rounded-5 mt-2"%>
               <% else %>
               <% end %>
-       
+
                <%= link_to "Hire me", new_webdev_reservation_path(webdev), class: "btn btn-primary rounded-5 mt-2" %>
               <div class="text-center-sm">
                 <p class="h5 text-center-sm mt-3"><span class="small">Hourly rate:</span></p>
