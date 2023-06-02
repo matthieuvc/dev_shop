@@ -97,7 +97,7 @@
 
 
 
-              <% if webdev.user_id == current_user.id %>
+              <% if webdev.user == current_user %>
                 <%= link_to "Edit your details", edit_webdev_path(webdev), class: "btn btn-outline-primary rounded-5 mt-2"%>
               <% else %>
               <% end %>
