@@ -32,6 +32,30 @@ class ReservationsController < ApplicationController
     @duration_in_hours = (@reservation[:end_date] - @reservation[:start_date]).to_i / 1.hour
   end
 
+  def approve
+    @reservation = Reservation.find_by_id(params[:id])
+    @reservation.update(status: "approved")
+     if @reservation.status == "approved"
+       flash[:success] = "Booking successfully approved"
+       redirect_to dashboard_path
+     else
+       flash[:error] = "Booking not approved"
+       redirect_to dashboard_path
+     end
+    end
+
+    def decline
+      @reservation = Reservation.find_by_id(params[:id])
+      @reservation.update(status: "rejected")
+       if @reservation.status == "rejected"
+         flash[:success] = "Booking hasn't been approved"
+         redirect_to dashboard_path
+       else
+         flash[:error] = "Booking not approved"
+         redirect_to dashboard_path
+       end
+      end
+
   private
 
   def reservation_params
