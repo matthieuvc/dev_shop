@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :webdevs do
-    resources :reservations, only: [:new, :create, :show]
+    resources :reservations, only: [:new, :create, :show, :update]
   end
 end
