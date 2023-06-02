@@ -15,8 +15,6 @@ class WebdevsController < ApplicationController
     @reservation = Reservation.new
   end
 
-
-
   def new
     @webdev = Webdev.new
   end
@@ -29,7 +27,7 @@ class WebdevsController < ApplicationController
     @webdev = Webdev.new(webdev_params)
     @webdev.user = current_user
     if @webdev.save
-      redirect_to webdev_path(@webdev)
+      redirect_to webdevs_path
     else
       render :new, status: :unprocessable_entity
     end

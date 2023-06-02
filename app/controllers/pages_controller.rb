@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @reservations = Reservation.all
+
   end
 end
