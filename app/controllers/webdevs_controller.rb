@@ -1,12 +1,21 @@
 class WebdevsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @webdevs = Webdev.all
     if params[:query].present?
-      sql_subquery = "service_type ILIKE :query OR availability ILIKE :query"
-      @webdevs = @webdevs.where(sql_subquery, query: "%#{params[:query]}%")
+      sql_subquery = <<~SQL
+          webdevs.service_type ILIKE :query
+        OR users.name ILIKE :query
+
+      SQL
+      @webdevs = @webdevs.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
     end
     @reservation = Reservation.new
   end
+
+
 
   def new
     @webdev = Webdev.new
@@ -33,12 +42,12 @@ class WebdevsController < ApplicationController
   def update
     @webdev = Webdev.find(params[:id])
     @webdev.update(webdev_params)
-    redirect_to webdev_path(@webdev)
+    redirect_to webdevs_path
   end
 
   private
 
   def webdev_params
-    params.require(:webdev).permit(:service_type, :price, :experience_year, :availablity, :photo)
+    params.require(:webdev).permit(:service_type, :price, :experience_year, :availablity, :description, :photo)
   end
 end
