@@ -12,6 +12,7 @@ class WebdevsController < ApplicationController
       SQL
       @webdevs = @webdevs.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
     end
+    @reservation = Reservation.new
   end
 
 

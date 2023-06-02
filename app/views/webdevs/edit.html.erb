@@ -1,8 +1,19 @@
-<%= simple_form_for(@webdev) do |f| %>
-  <%= f.input :service_type %>
-  <%= f.input :price %>
-  <%= f.input :experience_year %>
-  <%= f.input :availability %>
-  <%= f.input :description %>
-  <%= f.submit %>
-<% end %>
+
+<div class="container">
+
+  <div class="d-flex justify-content-center">
+
+    <div class="webdevs-main mt-4" style="width: 500px;">
+    <h3 class="mtb-2 text-center">Modify here your details</h3>
+
+      <%= simple_form_for(@webdev) do |f| %>
+        <%= f.input :service_type %>
+        <%= f.input :price %>
+        <%= f.input :experience_year %>
+        <%= f.input :availability %>
+        <%= f.submit %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
